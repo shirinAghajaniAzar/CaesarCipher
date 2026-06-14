@@ -14,11 +14,24 @@ def encrypt(original_text, shift_amount):
             place_holder += alphabet[x]
         else:
             place_holder += letter
-    print(place_holder)
+    print(f"The cipher message is:\n {place_holder}")
+
+
+def decrypt(cipher_text, shift_amount):
+    place_holder= ''
+    ceaser_text = text
+    shift_amount = shift
+
+    for letter in text:
+        if letter in alphabet:
+            x = (alphabet.index(letter) - shift) % len(alphabet)
+            place_holder += alphabet[x]
+        else:
+            place_holder += letter
+    print(f"The original message was:\n {place_holder}")        
 
 if direction=='encode':
     encrypt(original_text= text ,shift_amount = shift)
 
 elif direction=='decode':
-    decrypt()
-
+    decrypt(cipher_text = text, shift_amount= shift)
