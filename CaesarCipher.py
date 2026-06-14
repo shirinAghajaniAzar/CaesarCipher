@@ -10,7 +10,7 @@ def encrypt(original_text, shift_amount):
     place_holder=''
     for letter in original_text:
         if letter in alphabet:
-            x = (alphabet.index(letter) + shift) % 26
+            x = (alphabet.index(letter) + shift) % len(alphabet)
             place_holder += alphabet[x]
         else:
             place_holder += letter
